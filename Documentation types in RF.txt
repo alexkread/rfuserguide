@@ -1,0 +1,11 @@
+Robot Framework User Guide
+Standard libraries
+API documentation
+General documentation
+Certification program
+Web workgroup/website
+Foundation info
+
+See links: 
+* https://github.com/robotframework/robotframework/tree/master
+* https://docs.robotframework.org

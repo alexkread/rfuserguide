@@ -1,0 +1,11 @@
+Robot Framework User Guide Version 7.0: https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html
+Install guide: https://github.com/robotframework/robotframework/blob/master/INSTALL.rst
+Github overview: https://github.com/robotframework/robotframework/tree/master
+Libraries: https://robotframework.org/robotframework/
+Writing good test cases: https://github.com/robotframework/HowToWriteGoodTestCases/blob/master/HowToWriteGoodTestCases.rst
+User guide readme reST on github: https://github.com/robotframework/robotframework/blob/master/doc/userguide/README.rst
+Get started: https://robotframework.org/?tab=2#getting-started
+Beginner's guide: https://github.com/robotframework/BeginnersGuide ******** GOOD
+Github skeleton only page: https://github.com/robotframework/robotframework/blob/master/doc/userguide/src/RobotFrameworkUserGuide.rst
+Quickstart: https://github.com/robotframework/QuickStartGuide/blob/master/QuickStart.rst
+

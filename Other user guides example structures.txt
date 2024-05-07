@@ -1,0 +1,47 @@
+.net: N/A, not good
+
+Java: 
+	* https://docs.oracle.com/en/java/javase/22/
+	* https://docs.oracle.com/javase/specs/jls/se22/html/index.html
+	* https://docs.oracle.com/javase/tutorial/ ******** GOOD	
+
+Python: 
+	* https://docs.python.org/3/tutorial/index.html
+	* https://www.python.org/doc/ ******** GOOD
+
+Javascript: 
+	* https://javascript.info ******** GOOD
+	* https://developer.mozilla.org/en-US/docs/Web/JavaScript (beginner/intermediate/advanced)
+	* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide ******** GOOD
+
+Ranorex: 
+	* https://www.ranorex.com/rx-media/rx-user-guide/pdf-v10.2/Ranorex-Studio-Fundamentals.pdf ******** GOOD (familiarise in 20m)
+
+UFT: 
+	* https://support.microfocus.com/kb/kmdoc.php?id=KM02208482&fileName=UFT12.53_UserGuide_pdf.pdf
+
+IBM RFT: 
+	* https://www.ibm.com/docs/en/rft/10.1.0?topic=getting-started-guide
+	* https://www.ibm.com/docs/en/rft/9.5.0 (role-based ToC - executioner etc.)
+
+LDTP: 
+	* https://ldtp.freedesktop.org/wiki/ ******** GOOD clear code examples
+	* https://github.com/ldtp/ldtp2
+
+Appium:
+	* https://appium.io/docs/en/latest/ (intro, quickstart)
+	* https://appium.io/docs/en/2.0/
+
+Selenium: 
+	* https://www.selenium.dev/documentation/webdriver/
+	* https://www.selenium.dev/documentation/ ******** GOOD different languages (RF, Python)
+
+Playwright:
+	* https://playwright.dev/docs/intro
+
+Watir:
+	* https://www.tutorialspoint.com/watir/index.htm
+
+Robot Framework external:
+	* Vala: https://www.valagroup.com/blog/a-beginners-guide-to-robot-framework-test-automation/
+	* readthedocs.io: https://robot-framework.readthedocs.io/en/master/

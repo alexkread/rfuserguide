@@ -1,0 +1,783 @@
+1   Getting started
+1.1   Introduction
+1.1.1   Why Robot Framework?
+1.1.2   High-level architecture
+1.1.3   Screenshots
+1.1.4   Getting more information
+	Project pages
+	Mailing lists
+1.2   Copyright and license
+1.3   Installation instructions
+1.3.1   Python installation
+	Installing Python on Linux
+	Installing Python on Windows
+	Installing Python on macOS
+	PyPy installation                                       (opens in same window)
+	Configuring PATH
+1.3.2   Installing using pip
+	Running pip command
+	Installing and uninstalling Robot Framework
+1.3.3   Installing from source 
+1.3.4   Verifying installation                                   (needs update each version)
+1.3.5   Virtual environments
+1.4   Demonstrations
+	(Quick Start Guide)
+	(Robot Framework demo)
+	(Web testing demo)
+	(ATDD with Robot Framework)
+
+2   Creating test data
+2.1   Test data syntax
+2.1.1   Files and directories
+2.1.2   Test data sections
+2.1.3   Supported file formats
+	Space separated format
+	Pipe separated format					(to be deprecated?)
+	reStructuredText format
+	JSON format
+		Converting suite to JSON
+		Creating suite from JSON
+		Executing JSON files
+		Adjusting suite source
+		JSON structure
+2.1.4   Rules for parsing the data
+	Ignored data
+	Escaping
+		Escaping special characters
+		Forming escape sequences
+		Handling empty values
+		Handling spaces
+	Dividing data to several rows
+2.1.5   Localization
+	Enabling languages
+		Using command line option
+	Built-in languages
+	Custom language files
+	Contributing translations
+2.2   Creating test cases
+2.2.1   Test case syntax
+	Basic syntax
+	Settings in the Test Case section
+	Test case related settings in the Setting section
+2.2.2   Using arguments
+	Positional arguments
+	Default values
+	Variable number of arguments
+	Named arguments
+		Basic syntax
+		Named arguments with variables
+		Escaping named arguments syntax
+		Where named arguments are supported
+		Named arguments example
+	Free named arguments
+		Examples
+	Named-only arguments
+	Arguments embedded to keyword names
+2.2.3   Failures
+	When test case fails
+	Error messages
+2.2.4   Test case name and documentation
+2.2.5   Tagging test cases
+	Deprecation of Force Tags and Default Tags
+	Reserved tags
+2.2.6   Test setup and teardown
+2.2.7   Test templates
+	Basic usage
+	Templates with embedded arguments
+	Templates with FOR loops				(Syntax hasn't been introduced yet)
+	Templates with IF/ELSE structures
+2.2.8   Different test case styles
+	Keyword-driven style
+	Data-driven style
+	Behavior-driven style
+2.3   Creating tasks
+	2.3.1   Task syntax
+	2.3.2   Task related settings
+2.4   Creating test suites					(could benefit from way more pictures & icons visually)
+	2.4.1   Suite files
+	2.4.2   Suite directories
+		Suite initialization files
+	2.4.3   Suite name
+	2.4.4   Suite documentation
+	2.4.5   Free suite metadata
+	2.4.6   Suite setup and teardown
+2.5   Using test libraries					(could be offloaded to libraries documentation, API documentation)
+	2.5.1   Importing libraries
+		Using Library setting
+		Using Import Library keyword
+	2.5.2   Specifying library to import
+		Using library name
+		Using physical path to library
+	2.5.3   Setting custom name to library
+	2.5.4   Standard libraries
+		Normal standard libraries
+		Remote library
+	2.5.5   External libraries
+2.6   Variables
+	2.6.1   Introduction
+	2.6.2   Using variables
+		Scalar variable syntax
+		List variable syntax
+			Using list variables with other data	(could benefit from expanding, better yet hidden, pannels)
+			Using list variables with settings
+		Dictionary variable syntax
+			Using dictionary variables with other data
+			Using dictionary variables with settings
+		Accessing list and dictionary items
+			Accessing sequence items
+			Accessing individual dictionary items
+			Nested item access
+		Environment variables
+2.6.3   Creating variables
+	Variable section
+		Creating scalar variables			(new VAR below)
+		Creating list variables
+		Creating dictionary variables
+		Creating variable name based on another variable
+	Variable file
+		Setting variables in command line
+		Return values from keywords
+			Assigning scalar variables
+			Assigning variables with item values
+			Creating variable name based on another variable
+			Assigning list variables
+			Assigning dictionary variables
+			Assigning multiple variables
+			Automatically logging assigned variable value
+	VAR syntax
+		Creating scalar variables
+			Creating list and dictionary variables
+			Scope
+			Creating variables conditionally
+			Creating variable name based on another variable
+	Using Set Test/Suite/Global Variable keywords
+2.6.4   Built-in variables
+	Operating-system variables
+	Number variables
+	Boolean and None/null variables
+	Space and empty variables
+	Automatic variables
+2.6.5   Variable priorities and scopes
+	Variable priorities
+		(Variables from the command line)
+		(Variable section in a test case file)
+		(Imported resource and variable files)
+		(Variables set during test execution)
+		(Built-in variables)
+	Variable scopes
+		Global scope
+		Test suite scope
+		Test case scope
+		Local scope
+2.6.6   Advanced variable features
+	Extended variable syntax
+	Extended variable assignment
+	Variables inside variables
+	Inline Python evaluation
+2.7   Creating user keywords
+2.7.1   User keyword syntax
+	Basic syntax
+	Settings in the Keyword section
+2.7.2   User keyword name and documentation
+2.7.3   User keyword tags
+2.7.4   User keyword arguments
+	Positional arguments with user keywords
+	Default values with user keywords
+	Variable number of arguments with user keywords
+	Free named arguments with user keywords
+	Named-only arguments with user keywords
+2.7.5   Embedding arguments into keyword name
+	Basic syntax
+	Embedded arguments matching wrong values
+	Resolving conflicts
+	Using custom regular expressions
+		Supported regular expression syntax
+		Escaping special characters
+		Using variables with custom embedded argument regular expressions
+		Behavior-driven development example					(Examples table sample missing)
+2.7.6   User keyword return values
+	Using RETURN statement								(IF syntax hasn't been introduced yet)
+	Using [Return] setting
+	Using special keywords to return
+2.7.7   User keyword setup and teardown
+2.7.8   Private user keywords
+2.8   Resource and variable files
+2.8.1   Resource files
+	Taking resource files into use
+	Resource file structure
+	Documenting resource files
+	Example resource file
+	Resource files using reStructured text format
+	Resource files using JSON format
+2.8.2   Variable files
+	Taking variable files into use
+		Setting section
+		Command line
+	Getting variables directly from a module
+		Basic syntax
+		Using objects as values
+		Creating variables dynamically
+		Selecting which variables to include
+	Getting variables from a special function
+	Implementing variable file as a class
+		Implementation
+		Examples
+	Variable file as YAML
+	Variable file as JSON
+2.9   Control structures
+2.9.1   FOR loops
+	Simple FOR loop
+	Old FOR loop syntax
+	Nesting FOR loops
+	Using several loop variables
+	FOR-IN-RANGE loop
+	FOR-IN-ENUMERATE loop
+	FOR-IN-ZIP loop
+	Dictionary iteration
+	Removing unnecessary keywords from outputs
+	Repeating single keyword
+2.9.2   WHILE loops
+	Basic WHILE syntax
+	Limiting WHILE loop iterations
+	Nesting WHILE loops
+	Removing unnecessary keywords from outputs
+2.9.3   Loop control using BREAK and CONTINUE
+2.9.4   IF/ELSE syntax
+	Basic IF syntax
+	ELSE branches
+	ELSE IF branches
+	Inline IF
+	Nested IF structures
+	Other ways to execute keywords conditionally
+2.9.5   TRY/EXCEPT syntax
+	Catching exceptions with EXCEPT
+	Matching errors using patterns
+	Capturing error message
+	Using ELSE to execute keywords when there are no errors
+	Using FINALLY to execute keywords regardless are there errors or not
+	Other ways to handle errors
+2.10   Advanced features
+2.10.1   Handling keywords with same names
+	Keyword scopes
+	Specifying a keyword explicitly
+	Specifying explicit priority between libraries and resources
+2.10.2   Timeouts
+	Test case timeout
+	User keyword timeout
+2.10.3   Parallel execution of keywords
+
+3   Executing test cases
+3.1   Basic usage
+3.1.1   Starting test execution
+	Synopsis
+	Specifying test data to be executed
+3.1.2   Using command line options
+	Using options
+	Short and long options
+	Setting option values
+	Disabling options accepting no values
+	Simple patterns
+	Tag patterns
+	ROBOT_OPTIONS and REBOT_OPTIONS environment variables
+3.1.3   Test results
+	Command line output
+	Generated output files
+	Return codes
+	Errors and warnings during execution
+3.1.4   Argument files
+	Argument file syntax
+	Using argument files
+	Reading argument files from standard input
+3.1.5   Getting help and version information
+3.1.6   Creating start-up scripts
+	Shell script example
+	Batch file example
+	Python example
+3.1.7   Making *.robot files executable
+3.1.8   Debugging problems
+	Using the Python debugger (pdb)
+3.2   Test execution
+3.2.1   Execution flow
+	Executed suites and tests
+	Setups and teardowns
+		Suite setup
+		Suite teardown
+		Test setup
+		Test teardown
+		User keyword setup
+		User keyword teardown
+	Execution order
+3.2.2   Test and suite statuses
+	PASS
+		Prematurely passing tests
+	FAIL
+	SKIP
+		Skipping before execution
+		Skipping dynamically during execution
+		Automatically skipping failed tests
+	Migrating from criticality to SKIP
+	Suite status
+3.2.3   Continuing on failure
+	Execution continues on teardowns automatically
+	All top-level keywords are executed when tests have templates
+	Special failures from keywords
+	Run Keyword And Continue On Failure keyword
+	Enabling continue-on-failure using tags
+	Disabling continue-on-failure using tags
+	TRY/EXCEPT
+	BuiltIn keywords
+3.2.4   Stopping test execution gracefully
+	Pressing Ctrl-C
+	Using signals
+	Using keywords
+	Stopping when first test case fails
+	Stopping on parsing or execution error
+	Handling teardowns
+3.3   Task execution
+3.3.1   Generic automation mode
+3.3.2   Task related command line options
+3.4   Post-processing outputs
+3.4.1   Using Rebot
+	Synopsis
+	Specifying options and arguments
+	Return codes with Rebot
+	Controlling execution mode
+3.4.2   Creating reports, logs and output files
+3.4.3   Combining outputs
+3.4.4   Merging outputs
+	Merging re-executed tests
+	Merging suites executed in pieces
+3.4.5   JSON output files
+3.5   Configuring execution
+3.5.1   Selecting files to parse
+	Executing individual files
+	Included and excluded files
+	Selecting files by name or path
+	Selecting files by extension
+	Using custom parsers
+3.5.2   Selecting test cases
+	By test names
+	By suite names
+	By tag names
+	Re-executing failed test cases
+	Re-executing failed test suites
+	When no tests match selection
+3.5.3   Setting metadata
+	Setting suite name
+	Setting suite documentation
+	Setting free suite metadata
+	Setting test tags
+3.5.4   Configuring where to search libraries and other extensions
+	Locations automatically in module search path
+	PYTHONPATH
+	Using --pythonpath option
+	Configuring sys.path programmatically
+3.5.5   Setting variables
+3.5.6   Dry run
+3.5.7   Randomizing execution order
+3.5.8   Programmatic modification of test data
+	Example: Select every Xth test
+	Example: Exclude tests by name
+	Example: Disable setups and teardowns
+3.5.9   Controlling console output
+	Console output type
+	Console width
+	Console colors
+	Console markers
+3.5.10   Setting listeners
+3.6   Output files
+3.6.1   Different output files
+	Output directory
+	Output file
+	Legacy output file format
+	Log file
+	Report file
+	XUnit compatible result file
+	Debug file
+	Timestamping output files
+	Setting titles
+	Setting background colors
+3.6.2   Log levels
+	Available log levels
+	Setting log level
+	Visible log level
+3.6.3   Splitting logs
+3.6.4   Configuring statistics
+	Configuring displayed suite statistics
+	Including and excluding tag statistics
+	Generating combined tag statistics
+	Creating links from tag names
+	Adding documentation to tags
+3.6.5   Removing and flattening keywords
+	Removing keywords
+	Flattening keywords
+	Flattening keyword during execution time
+3.6.6   Automatically expanding keywords
+3.6.7   Setting start and end time of execution
+3.6.8   Limiting error message length in reports
+3.6.9   Programmatic modification of results
+3.6.10   System log
+
+4   Extending Robot Framework
+4.1   Creating test libraries
+4.1.1   Introduction
+	Supported programming languages
+	Different test library APIs
+		Static API
+		Dynamic API
+		Hybrid API
+4.1.2   Creating test library class or module
+	Library name
+	Providing arguments to libraries
+	Library scope
+	Library version
+	Documentation format
+	Library acting as listener
+	@library decorator
+4.1.3   Creating keywords
+	What methods are considered keywords
+	Limiting public methods becoming keywords
+		Class based libraries
+		Module based libraries
+		Using @not_keyword decorator
+	Keyword names
+		Setting custom name
+	Keyword tags
+	Keyword arguments
+	Default values to keywords
+	Variable number of arguments (*varargs)
+	Free keyword arguments (**kwargs)
+	Keyword-only arguments
+	Positional-only arguments
+	Argument conversion
+		Manual argument conversion
+		Specifying argument types using function annotations
+		Specifying argument types using @keyword decorator
+		Implicit argument types based on default values
+		Supported conversions
+		Specifying multiple possible types
+		Type conversion with generics
+		Custom argument converters
+			Overriding default converters
+			Conversion errors
+			Restricting value types
+			Converting custom types
+			Strict type validation
+			Accessing the test library from converter
+			Converter documentation
+	@keyword decorator
+	@not_keyword decorator
+	Using custom decorators
+	Embedding arguments into keyword names
+	Asynchronous keywords
+4.1.4   Communicating with Robot Framework
+	Reporting keyword status
+		Error messages
+		(Python)
+		HTML in error messages
+		Cutting long messages automatically
+		Tracebacks
+	Exceptions provided by Robot Framework
+	Continuable failures
+	Skipping tests
+	Stopping test execution
+	Logging information
+		Using log levels
+		Errors and warnings
+		Logging HTML
+		Timestamps
+		Logging to console
+		Logging example
+	Programmatic logging APIs
+		Public logging API
+		Using Python's standard logging module
+	Logging during library initialization
+	Returning values
+	Detecting is Robot Framework running
+	Communication when using threads
+4.1.5   Distributing test libraries
+	Documenting libraries
+	Testing libraries
+	Packaging libraries
+	Deprecating keywords
+4.1.6   Dynamic library API
+	Getting keyword names
+		Marking methods to expose as keywords
+	Running keywords
+	Getting keyword arguments
+	Getting keyword argument types
+	Getting keyword tags
+	Getting keyword documentation
+	Getting general library documentation
+	Getting keyword source information
+	Named argument syntax with dynamic libraries
+	Free named arguments with dynamic libraries
+	Named-only arguments with dynamic libraries
+	Summary
+4.1.7   Hybrid library API
+	Getting keyword names
+	Running keywords
+	Getting keyword arguments and documentation
+	Summary
+4.1.8   Using Robot Framework's internal modules
+	Available APIs
+	Using BuiltIn library
+4.1.9   Extending existing test libraries
+	Modifying original source code
+	Using inheritance
+	Using other libraries directly
+	Getting active library instance from Robot Framework
+	Libraries using dynamic or hybrid API
+4.2   Remote library interface
+4.2.1   Introduction
+4.2.2   Putting Remote library to use
+	Importing Remote library
+	Starting and stopping remote servers
+4.2.3   Supported argument and return value types
+4.2.4   Remote protocol
+	Required methods
+	Using get_keyword_names and keyword specific getters
+	Using get_library_information
+	Executing remote keywords
+	Different argument syntaxes
+4.3   Listener interface
+4.3.1   Listener structure
+4.3.2   Listener interface versions
+	Listener version 2
+	Listener version 3
+4.3.3   Taking listeners into use
+	Registering listeners from command line
+	Libraries as listeners
+		Registering listener
+		Called listener methods
+4.3.4   Listener examples
+	Getting information
+	Modifying data and results
+		Modifying executed suites and tests
+		Accessing library or resource file
+		Modifying results
+	More examples
+4.4   Parser interface
+4.4.1   Taking parsers into use
+4.4.2   Parser API
+	EXTENSION or extension attribute
+	parse method
+	parse_init method
+	Optional base class
+4.4.3   Examples
+	Parser implemented as module
+	Parser implemented as class
+	Parser extending optional base class
+	Parser as preprocessor
+
+5   Supporting Tools
+5.1   Library documentation tool (Libdoc)			(child contents sometimes out of sync)
+5.1.1   General usage
+	Synopsis
+	Options
+	Executing Libdoc
+	Specifying library or resource file
+		Python libraries and dynamic libraries with name or path
+		Resource files with path
+		Libdoc spec files
+	Generating documentation
+		Libdoc HTML documentation
+		Libdoc XML spec files
+		Libdoc JSON spec files
+	Viewing information on console
+5.1.2   Writing documentation
+	Python libraries
+	Dynamic libraries
+	Importing section
+	Resource file documentation
+5.1.3   Documentation syntax
+	Robot Framework documentation syntax
+		Creating table of contents automatically
+	HTML documentation syntax
+	Plain text documentation syntax
+	reStructuredText documentation syntax
+5.1.4   Internal linking
+	Linking to keywords
+	Linking to automatic sections
+	Linking to custom sections
+5.1.5   Representing arguments
+	Included information
+	Automatically listing type documentation
+5.1.6   Libdoc example
+5.2   Test data documentation tool (Testdoc)
+5.2.1   General usage
+	Synopsis
+	Options
+5.2.2   Generating documentation
+5.3   Test data clean-up tool (Tidy)
+5.4   External tools
+
+6   Appendices
+6.1   Available settings
+6.1.1   Setting section
+6.1.2   Test Case section
+6.1.3   Keyword section
+6.2   Command line options
+6.2.1   Command line options for test execution
+6.2.2   Command line options for post-processing outputs
+6.2.3   Environment variables for execution and post-processing
+6.3   Translations
+6.3.1   Bulgarian (bg)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.2   Bosnian (bs)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.3   Czech (cs)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.4   German (de)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.5   Spanish (es)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.6   Finnish (fi)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.7   French (fr)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.8   Hindi (hi)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.9   Italian (it)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.10   Dutch (nl)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.11   Polish (pl)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.12   Portuguese (pt)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.13   Brazilian Portuguese (pt-BR)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.14   Romanian (ro)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.15   Russian (ru)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.16   Swedish (sv)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.17   Thai (th)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.18   Turkish (tr)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.19   Ukrainian (uk)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.20   Vietnamese (vi)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.21   Chinese Simplified (zh-CN)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.3.22   Chinese Traditional (zh-TW)
+	Section headers
+	Settings
+	BDD prefixes
+	Boolean strings
+6.4   Documentation formatting
+6.4.1   Handling whitespace in test data
+	Newlines
+	Spaces
+6.4.2   Paragraphs
+6.4.3   Inline styles
+6.4.4   URLs
+6.4.5   Custom links and images
+	Link with text content
+	Link with image content
+	Image with title text
+6.4.6   Section titles
+6.4.7   Tables
+6.4.8   Lists
+6.4.9   Preformatted text
+6.4.10   Horizontal ruler
+6.5   Time format
+6.5.1   Time as number
+6.5.2   Time as time string
+6.5.3   Time as "timer" string
+6.6   Boolean arguments
+6.7   Evaluating expressions
+6.7.1   Introduction
+6.7.2   Evaluation namespace
+6.7.3   Using variables
+	Normal ${variable} syntax
+	Special $variable syntax
+6.8   Registrations
+6.8.1   Suite file extensions
+6.8.2   Resource file extensions
+6.8.3   Media type
+6.8.4   Remote server port
+
+
+
+
+
+
+--------
+SUMMARY:
+--------
+* 5 title nesting levels deep
+* lines of/for titles
+
+
+
+
+
+

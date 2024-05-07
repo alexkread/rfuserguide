@@ -1,0 +1,84 @@
+docusaurus: 
+- Translations only apply to text contained within a theme's template, such as "next" and "previous" links. The Markdown content of a page is not translated. If you wish to create multilingual documentation, you need to combine theme localization with a third-party internationalization/localization plugin.
+Google analytics
+
+It is easy to translate a Docusaurus website with its internationalization (i18n) support.
+insights, metrics, default Google Analytics plugin. To use it with Simple Analytics, you can use our Docusaurus plugin.
+
+
+
+React JavaScript
+You don't want a single-page application (SPA)'
+
+
+search 
+content translation crowdin
+playground (code sandbox vs preview)
+best suited complex large documentation sites (vs smaller, simpler structure)
+Docusaurus is developed and maintained by Facebook
+
+both support markdown, versioning, deploy to git
+
+SPA
+python
+DS probably simpler but our plugin system is more powerful
+OSS
+Build time increases exponentially as site grows
+
+
+markdown - selected
+
+
+XML library RF for run button
+do not use for all code snippets - for loops, if statements secondary
+tasks - layout, start new site
+test each example from user guide
+start with table of content - create own github site personally
+
+
+python api docs - python doc strings into markdown
+
+
+
+no quick start - starting for the users, due to this, user guides are aimed at this
+but it's also a reference manual like API document - need a full text search
+TOC doesn't help to find content 
+library creation - files, classes, documentation - lower + lower etc. 
+How to start with RF
+Intro section is outdated, has this problem largely. Intro info is elsewhere
+Intro - executing - extending
+
+Some sections need bigger work: 
+creating test cases section - creating libraries underneath, need bringing higher level, too long too many sub sections
+Overhaul & re-write variables section
+could be architecture, logs + output screenshots (could get outdated fast)
+Install instructions install.rst in repository rules - kept separately as not so much need to update. Decoupling not needed.
+
+Order - propose could be useful, maybe not needed. Overall structure - current? 
+docstrings in a library docs appendix - many places, missing from module level
+
+basics only... then advanced hidden/later 
+examples useful 
+include info from certifications 
+audiences - people using but not programmers, programmers wanting to extend 
+listener API v3 etc. are more part of the API documentation - reference only here
+
+user guide? reference manual naming - have guide in the name RTFM RFTM
+API guide - updated with each version of RF. This keeps static
+docs.robotframework.org - link to there for onboarding/introduction
+
+
+style guide
+certification syllabus
+user guide
+API guide
+introduction getting started guide
+
+
+some markup for certain search to link between these/from these documentations 
+index convention used in italics - top things which should be in index
+
+doc\userguide\src\ug to html.py script to run to convert to single html file pandoc tool exsists, could be useful (unknown)
+
+restructured text can have custom roles, under src - roles trying to follow sphinx roles
+TOC 1st page - new proposal

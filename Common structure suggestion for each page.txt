@@ -1,0 +1,17 @@
+Supported versions [icons: 5 6 7] minor useful?
+Topic difficulty [Beginner, intermediate, advanced]
+Topic use(?) [Mandatory, Certification, Additional]
+Purpose 
+Operation 
+Simplest basic example
+Example [tabs: RF, BDD, Python] or [Windows, Linux, MacOS for i.e batch]
+Notes
+
+
+
+
+Currently, some consistency:
+* Introduction
+* for code-only:
+	Synopsis
+	Options

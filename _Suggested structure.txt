@@ -1,0 +1,88 @@
+Documentation parent page with links
+
+1   Introduction
+1.1	Familiarise yourself in 20 minutes			(video from Miikka?)
+	Tool & purpose
+		Example screenshots
+		Test automation and RPA use
+	Foundation
+	Ecosystem projects
+	Libaries
+1.2	More details
+1.2.1   Why Robot Framework?
+	Comparison with other tools				(?)
+1.2.2   High-level architecture
+1.2.3   Example screenshots					(not to confuse with screenshot taking)
+1.2.4   Getting more information
+1.2.5   Project pages
+1.2.6   Mailing lists
+1.3   Demonstrations
+	Test Automation
+		Web GUI
+		REST web service
+		Database
+		ATDD with Robot Framework
+	RPA
+		???
+1.4   Copyright and license
+
+2	Getting started 
+2.1	Quickstart fast setup 					(video recording also)
+	Installing software					(no IDE at this point)
+	Validating software
+	Creating a 1st project 
+	Creating a 1st passing test case
+	Creating a 1st failing test case
+2.2   Installation instructions
+2.2.1   Python installation
+	Installing Python on Linux
+	Installing Python on Windows
+	Installing Python on macOS
+2.2.2   PyPy installation                                       (opens in same window)
+	Configuring PATH
+2.2.3   Pip installation
+2.2.4   Installing using pip
+	Running pip command
+	Installing and uninstalling Robot Framework
+2.2.5   Installing from source 
+2.2.6   Verifying installation                                   (needs update each version)
+2.2.7   Selecting an IDE
+	Selecting an IDE plugin
+2.2.8   Virtual environments
+
+3	Project structure
+3.1	Test automation	project structure				(TAS - naming to use here?) (HTML image map would be nice)
+		Test Data
+		Variables						(i.e. POM style)
+		Test setup and teardown
+		Test Cases						(incl. ATDD style)
+		Test Steps
+		Report & log outputs
+		Libraries
+3.2	RPA project structure
+		Data
+		Variables						(i.e. POM style)
+		Process bot scripts					(correct terminology needed)		
+		Report & log outputs
+		Libraries
+
+4	Test/bot creation 
+	(largely the same as #2 now)
+
+5	Programming control structures
+
+6 	Test/bot execution
+ 	(same as #3 now)
+
+7 	Extending Robot Framework
+ 	(same as #4 now)
+
+8 	Supporting tools
+ 	(same as #5 now)
+
+9 	Appendices
+ 	(largely the same as #6 now)					(offload translations to separate guide?)
+
+
+
+
