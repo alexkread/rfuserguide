@@ -1,10 +1,11 @@
 # INPUT DATA
 
 - [Input data syntax](#input-data-syntax)
-   - [Files and directories](#files-and-directories)
-   - [Input data sections](#input-data-sections)
-   - [Supported file formats](#supported-file-formats)
-   - [Rules for parsing the data](#rules-for-parsing-the-data)
+- [Files and directories](#files-and-directories)
+- [Input data sections](#input-data-sections)
+- [Supported file formats](#supported-file-formats)
+- [Rules for parsing the data](#rules-for-parsing-the-data)
+- [Localization](#localization)
 
 >**TODO:** Auto-gen ToC at the top here in MKDocs
 
@@ -15,7 +16,7 @@ This section covers Robot Framework's overall input data syntax. Input data bein
 - initial imported data, separated from tasks script code, for Robotic Process Automation (RPA) script use
 
 
-### Files and directories
+## Files and directories
 
 The hierarchical structure for arranging test cases/RPA tasks is designed as follows:
 
@@ -40,7 +41,7 @@ In addition, there are:
 Test case files, RPA suite files, suite initialization files and resource files are all created using Robot Framework input data syntax, whereas Libraries and variable files are created using "real" programming languages (most often, Python).
 
 
-### Input data sections
+## Input data sections
 
 Robot Framework input data is defined in different sections, often also
 called tables, listed below:
@@ -90,9 +91,9 @@ purposes. This is especially useful when creating test cases using the
 > &#128226; _**NOTE:** Any data which may be entered before the first section is ignored._  
 > &#128226; _**NOTE:** Section headers can be localized. See the Translations appendix for supported translations._
 
-### Supported file formats
+## Supported file formats
 
->**TODO:** stylise each of the file extension mentions  
+>**TODO:**  stylise each of the file extension mentions  
 
 The most common approach to create Robot Framework input data is using the
 `space separated format` where pieces of the input data, such as keywords
@@ -112,22 +113,22 @@ the `.robot.rst` file extension are parsed by default. If you would
 rather use just `.rst` or `.rest`file extensions, they need to be
 configured separately.
 
->**TODO:** how to configure this is missing above!
+>**TODO:**  how to configure this is missing above!
 
 Input data can also be created in the `JSON format` that is targeted
 more for tool developers than normal Robot Framework users. Only JSON files
 with the custom `.rbt` file extension are parsed by default.
 
->**TODO:** what does "tool developer" mean here above?
+>**TODO:**  what does "tool developer" mean here above?
 
 Earlier Robot Framework versions also supported input data in HTML and TSV formats. The TSV format still works if the input data is compatible with the `space separated format`, but the support for the HTML format has been removed altogether.
 
 If you encounter such input data files, you need to convert them to the plain text format to be able to use them with Robot Framework. The easiest
 way to do that is using the `Tidy` tool, but you must use the version included with Robot Framework 3.1 because newer Robot Framework versions do not understand the HTML format at all.
 
->**TODO:** should we say why the HTML was removed here?
+>**TODO:**  should we say why the HTML was removed here?
 
-#### Space separated format
+### Space separated format
 
 When Robot Framework parses input data, it first splits the input data to lines and then those lines to tokens such as keywords and arguments. When using the space separated format, the separator between tokens is two or more spaces, or alternatively one or more tab characters. In addition to the normal ASCII space, any Unicode character considered to be a space (i.e. non-breaking space) works as a separator also. The number of spaces used as a separator can vary, as long as there are at least two, making it possible to nicely align the input data when it makes the input data easier to understand.
 
@@ -168,7 +169,7 @@ in the actual input data. It is possible to use special escape sequences  such a
 > &#128226; _**TIP:** Although using two spaces as a separator is enough, it is recommended to use four spaces to make the separator easier to recognize.
 
 
-#### Pipe separated format
+### Pipe separated format
 
 The biggest problem of the space separated format is that visually
 separating keywords from arguments can be tricky. This is a problem
@@ -224,7 +225,7 @@ to be escaped except `if they are at the end of the libe`. Possible pipes surrou
 </details>  
 <br />
 
-#### reStructuredText format
+### reStructuredText format
 
 `reStructuredText` (reST) is an easy-to-read plain text markup syntax that
 is commonly used for documentation of Python projects including Python itself. reST documents are most often compiled to HTML, but other output formats are supported also. Using reST with Robot Framework allows you to mix richly formatted documents and input data in a concise text format that is easy to work with using simple text editors, diff tools, and source control systems.
@@ -235,9 +236,9 @@ When using Robot Framework with reStructuredText files, normal input data is emb
 marked using the `code` directive, but Robot Framework also supports 
 `code-block` or `sourcecode` directives used by the `Sphinx` tool.
 
->**TODO:** normal input data used throughout here, better terminology or an initial explaination of this term would be good.
+>**TODO:**  normal input data used throughout here, better terminology or an initial explaination of this term would be good.
 
->**TODO:** this is the 1st time Sphinx is introduced. Explain what it is further.
+>**TODO:**  this is the 1st time Sphinx is introduced. Explain what it is further.
 
 ***
 <details>
@@ -291,24 +292,24 @@ are parsed by default when executing a directory. Parsing files with
 other file extensions `can be enabled` by using either :option:`--parseinclude`
 or :option:`--extension` option.
 
->**TODO:** though not in the runner/execution section, add an example block here.
+>**TODO:**  though not in the runner/execution section, add an example block here.
 
 When Robot Framework parses reStructuredText files, errors below the level
 `SEVERE` are ignored to avoid noise about possible non-standard directives
 and other such markup. This may hide also real errors, but they can be seen
 when processing files using reStructuredText tooling normally.
 
->**TODO:** bit developer-y, need to link to the section on different output levels here. Re-word non-standard directives possibly too
+>**TODO:**  bit developer-y, need to link to the section on different output levels here. Re-word non-standard directives possibly too
 
 
-#### JSON format
+### JSON format
 
 Robot Framework also supports input data also in the `JSON` format. This format is designed typically more for tool developers than for regular Robot Framework users and it is not meant to be edited manually. Its most important use cases are:
 - Transferring input data between processes and machines. A suite can be converted to JSON on one machine and recreated back to a suite on another machine (serialization).
 - Saving a suite (possibly a nested suite), constructed from normal input data into a single JSON file which is faster to parse.
 - As an alternative input data format for external tools generating tests or tasks.
 
-##### Converting suite to JSON
+#### Converting suite to JSON
 
 A suite structure can be serialized into JSON by using the `TestSuite.to_json`
 method. When used without arguments, it returns JSON data as a string, but
@@ -337,10 +338,10 @@ configuration options related to JSON formatting:
 
 If you would rather work with Python data and then convert that to JSON
 or some other format yourself, you can use `TestSuite.to_dict` instead. For more information, please see: 
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_json
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.to_dict
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.running.html#robot.running.model.TestSuite.to_json
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.running.html#robot.running.model.TestSuite.to_dict
 
-##### Creating suite from JSON
+#### Creating suite from JSON
 
 A suite can be constructed from JSON data using the `TestSuite.from_json` 
 method. It works both with JSON strings and paths to JSON files:
@@ -372,15 +373,15 @@ As the above example demonstrates, the created suite can be executed using
 the `TestSuite.run` method. It may, however, be easier to execute a JSON file
 directly as explained in the following section.For more information, please see: 
 
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_json
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.from_dict
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.running.html#robot.running.model.TestSuite.run
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.running.html#robot.running.model.TestSuite.from_json
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.running.html#robot.running.model.TestSuite.from_dict
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.running.html#robot.running.model.TestSuite.run
 
->**TODO:** Following section likely needs to point to a different chapter later
->**TODO:** Are these suite serialisations & running topics related to test-data? are they in the best place here?
->**TODO:** Examples of JSON produced maybe useful here
+>**TODO:**  Following section likely needs to point to a different chapter later  
+>**TODO:**  Are these suite serialisations & running topics related to test-data? are they in the best place here?  
+>**TODO:**  Examples of JSON produced maybe useful here
 
-##### Executing JSON files
+#### Executing JSON files
 
 When executing tests or tasks using the `robot` command, JSON files with
 the custom `.rbt` file extension are parsed automatically. This includes
@@ -388,11 +389,11 @@ running individual JSON files such as `robot tests.rbt` and running directories
 containing `.rbt` files. If you would rather use the standard
 `.json` file extension, you need to `configure which files are parsed`.
 
-##### Adjusting suite source
+#### Adjusting suite source
 
 Suite source in the data obtained from `TestSuite.to_json` and `TestSuite.to_dict` is in absolute format. If a suite is recreated later on a different machine, the source thus, may not match the directory structure on that machine. To avoid this situation, it is possible to use the `TestSuite.adjust_source` method to make the suite source relative before obtaining the data and to add a correct root directory after the suite is recreated:
 
->**TODO:** Explain absolute/relative here or link to it's definition online
+>**TODO:**  Explain absolute/relative here or link to it's definition online
 
 ***
 <details>
@@ -415,16 +416,16 @@ Suite source in the data obtained from `TestSuite.to_json` and `TestSuite.to_dic
 <br />
 
 For more information, please see:  
-- https://robot-framework.readthedocs.io/en/master/autodoc/robot.model.html#robot.model.testsuite.TestSuite.adjust_source
+- https://robot-framework.readthedocs.io/en/master/au_c/robot.model.html#robot.model.testsuite.TestSuite.adjust_source
 
-##### JSON structure
+#### JSON structure
 
 Imports, variables and keywords created in suite files are included in the
 generated JSON along with tests and tasks. The exact JSON structure is documented at `running.json` `schema file`.
 
-### Rules for parsing the data
+## Rules for parsing the data
 
-#### Ignored data
+### Ignored data
 
 When Robot Framework parses input data files, it ignores:
 
@@ -443,14 +444,14 @@ Robot Framework outputs, place it to the documentation or other metadata of
 test cases, tasks or suites, or log it with the `BuiltIn` keywords `Log` or
 `Comment`.
 
-#### Escaping
+### Escaping
 
 The escape character in Robot Framework input data is the backslash
 (`\`) and additionally `built-in variables` `${EMPTY}` and `${SPACE}`
 can often be used for escaping also. Different escaping mechanisms are
 discussed in the sections below.
 
-##### Escaping special characters
+#### Escaping special characters
 
 The backslash character can be used to escape special characters so that their literal values are used.
 
@@ -465,7 +466,7 @@ The backslash character can be used to escape special characters so that their l
 | `\|`      |  Pipe character, not a separator in the `pipe separated format`.   | `ls -1 *.txt \| wc -l`   |
 | `\`       |  Backslash character, never escapes anything.                      | `c:\\temp, \\${var}`     |
 
-##### Forming escape sequences
+#### Forming escape sequences
 
 The backslash character also allows creating special escape sequences that are recognized as characters that would otherwise be difficult or impossible to create in the input data.
 
@@ -484,7 +485,7 @@ The backslash character also allows creating special escape sequences that are r
 
 > &#128226; _**NOTE:** `Built-in variable` `${\n}` can be used if an operating system-dependent line terminator is needed (`\r\n` on Windows and `\n` elsewhere).
 
-##### Handling empty values
+#### Handling empty values
 
 When using the `space separated format`, the number of spaces used as
 a separator can vary and thus empty values cannot be recognized unless they
@@ -529,7 +530,7 @@ only when they are at the end of the row:
 </details>  
 <br />
 
-##### Handling spaces
+#### Handling spaces
 
 Spaces, especially consecutive spaces, as part of arguments for keywords or otherwise, are problematic for two reasons:
 
@@ -551,7 +552,7 @@ by using the `built-in variable`_ `${SPACE}`.
 
 As the above examples show, using the `${SPACE}` variable often makes the input data easier to understand. It is especially useful in combination with the `extended variable syntax` when more than one space is needed.
 
-#### Dividing data to several rows
+### Dividing data to several rows
 
 If there is more data than readily fits a row, it is possible to split it 
 and start continuing rows with an ellipsis (`...`). Ellipses can be indented
@@ -569,7 +570,7 @@ the final value is obtained by concatenating the rows together. The separator is
 a space by default, but that can be changed by starting the value with
 `SEPARATOR=<sep>`.
 
->**TODO:** Add an example here
+>**TODO:**  Add an example here
 
 Splitting lines is illustrated in the following two examples containing
 exactly the same input data with and and without splitting.
@@ -637,127 +638,137 @@ exactly the same input data with and and without splitting.
 </details>  
 <br />
 
-Localization
-------------
+## Localization
 
 Robot Framework localization efforts were started in Robot Framework 6.0
-that allowed translation of `section headers`_, settings_,
-`Given/When/Then prefixes`__ used in Behavior Driven Development (BDD), and
-`true and false strings`__ used in automatic Boolean argument conversion.
-The plan is to extend localization support in the future, for example,
-to log and report and possibly also to control structures.
+and allow translation of `section headers`, `settings`,
+`Given/When/Then prefixes` used in Behavior Driven Development (BDD) and
+`true and false strings` used in automatic boolean argument conversion.
+The plan is to extend localization support in the future - for example,
+to log and report outputs and possibly also to control structures.
 
-This section explains how to `activate languages`__, what `built-in languages`_
-are supported, how to create `custom language files`_ and how new translations
-can be contributed__.
+This section explains how to `activate languages`, what `built-in languages`
+are supported, how to create `custom language files` and how new translations
+can be contributed.
 
-__ `Enabling languages`_
-__ `Behavior-driven style`_
-__ `Supported conversions`_
-__ `Contributing translations`_
+### Enabling languages
 
-Enabling languages
-~~~~~~~~~~~~~~~~~~
-
-Using command line option
-'''''''''''''''''''''''''
+#### Using command line option
 
 The main mechanism to activate languages is specifying them from the command line
-using the :option:`--language` option. When enabling `built-in languages`_,
-it is possible to use either the language name like `Finnish` or the language
-code like `fi`. Both names and codes are case and space insensitive and also
-the hyphen (`-`) is ignored. To enable multiple languages, the
-:option:`--language` option needs to be used multiple times::
+using the `--language` option. When enabling `built-in languages`,
+it is possible to use either the language name, such as `Finnish`, or the language
+code, such as `fi`. Both names and codes are case and space insensitive and any hyphen (`-`) is ignored. To enable multiple languages, the `--language` option needs to be used multiple times:
 
+***
+<details>
+  <summary>&#129302; <b><i>EXAMPLE:</i></b></summary>
+
+   ```
     robot --language Finnish testit.robot
     robot --language pt --language ptbr testes.robot
+   ```
+</details>  
+<br />
 
-The same :option:`--language` option is also used when activating
-`custom language files`_. With them the value can be either a path to the file or,
-if the file is in the `module search path`_, the module name::
+>**TODO:**  Update examples throughout for clarity, remove abbreviations etc.
 
+The same `--language` option is used when activating `custom language files`. With them the value can be either a path to the file or, if the file is in the `module search path`, the module name:
+
+***
+<details>
+  <summary>&#129302; <b><i>EXAMPLE:</i></b></summary>
+
+   ```
     robot --language Custom.py tests.robot
     robot --language MyLang tests.robot
+   ```
+</details>  
+<br />
 
 For backwards compatibility reasons, and to support partial translations,
 English is always activated automatically. Future versions may allow disabling
 it.
 
-Pre-file configuration
-''''''''''''''''''''''
+#### Pre-file configuration
 
 It is also possible to enable languages directly in data files by having
 a line `Language: <value>` (case-insensitive) before any of the section
 headers. The value after the colon is interpreted the same way as with
-the :option:`--language` option::
+the `--language` option:
 
+***
+<details>
+  <summary>&#129302; <b><i>EXAMPLE:</i></b></summary>
+
+   ```
     Language: Finnish
 
     *** Asetukset ***
     Dokumentaatio        Example using Finnish.
 
+   ```
+</details>  
+<br />
+
 If there is a need to enable multiple languages, the `Language:` line
-can be repeated. These configuration lines cannot be in comments so something like
-`# Language: Finnish` has no effect.
+can be repeated. These configuration lines cannot be in comments so code resembling 
+`# Language: Finnish` or similar, has no effect.
 
-Due to technical limitations, the per-file language configuration affects also
-parsing subsequent files as well as the whole execution. This
-behavior is likely to change in the future and *should not* be relied upon.
-If you use per-file configuration, use it with all files or enable languages
-globally with the :option:`--language` option.
+Due to technical limitations, the per-file language configuration also affects 
+parsing subsequent files as well as the whole execution. This behavior is likely to change in the future and *should not* be relied upon. If you use per-file configuration, use it with all files or enable languages globally with the `--language` option.
 
-Built-in languages
-~~~~~~~~~~~~~~~~~~
+>**TODO:**   Example needed above
+
+### Built-in languages
 
 The following languages are supported out-of-the-box. Click the language name
-to see the actual translations:
+to see further details of the actual translations:
 
-.. START GENERATED CONTENT
-.. Generated by translations.py used by ug2html.py.
+- `Bulgarian (bg)`
+- `Bosnian (bs)`
+- `Czech (cs)`
+- `German (de)`
+- `Spanish (es)`
+- `Finnish (fi)`
+- `French (fr)`
+- `Hindi (hi)`
+- `Italian (it)`
+- `Dutch (nl)`
+- `Polish (pl)`
+- `Portuguese (pt)`
+- `Brazilian Portuguese (pt-BR)`
+- `Romanian (ro)`
+- `Russian (ru)`
+- `Swedish (sv)`
+- `Thai (th)`
+- `Turkish (tr)`
+- `Ukrainian (uk)`
+- `Vietnamese (vi)`
+- `Chinese Simplified (zh-CN)`
+- `Chinese Traditional (zh-TW)`
 
-- `Bulgarian (bg)`_
-- `Bosnian (bs)`_
-- `Czech (cs)`_
-- `German (de)`_
-- `Spanish (es)`_
-- `Finnish (fi)`_
-- `French (fr)`_
-- `Hindi (hi)`_
-- `Italian (it)`_
-- `Dutch (nl)`_
-- `Polish (pl)`_
-- `Portuguese (pt)`_
-- `Brazilian Portuguese (pt-BR)`_
-- `Romanian (ro)`_
-- `Russian (ru)`_
-- `Swedish (sv)`_
-- `Thai (th)`_
-- `Turkish (tr)`_
-- `Ukrainian (uk)`_
-- `Vietnamese (vi)`_
-- `Chinese Simplified (zh-CN)`_
-- `Chinese Traditional (zh-TW)`_
+>**TODO:** Add hyperlinks to each language above
 
-.. END GENERATED CONTENT
-
-All these translations have been provided by the awesome Robot Framework
+All these translations have been provided by the fantastic Robot Framework
 community. If a language you are interested in is not included, you can
-consider contributing__ it!
+consider` contributing` it!
 
-__ `Contributing translations`_
+### Custom language files
 
-Custom language files
-~~~~~~~~~~~~~~~~~~~~~
-
-If a language you would need is not available as a built-in language, or you
-want to create a totally custom language for some specific need, you can easily
-create a custom language file. Language files are Python files that contain
+If a language you desire is not available as a built-in language, or you
+want to create a completely custom language for a specific need, you can easily
+create a custom language file. Language files are Python files which contain
 one or more language definitions that are all loaded when the language file
 is taken into use. Language definitions are created by extending the
 `robot.api.Language` base class and overriding class attributes as needed:
 
-.. sourcecode:: python
 
+***
+<details>
+  <summary>&#129302; <b><i>EXAMPLE:</i></b></summary>
+
+   ```
     from robot.api import Language
 
 
@@ -766,28 +777,26 @@ is taken into use. Language definitions are created by extending the
         tags_setting = 'Labels'
         given_prefixes = ['Assuming']
         true_strings = ['OK', '\N{THUMBS UP SIGN}']
+   ```
+</details>  
+<br />
+
 
 Assuming the above code would be in file `example.py`, a path to that
 file or just the module name `example` could be used when the language file
-is activated__.
+is `activated`.
 
-The above example adds only some of the possible translations. That is fine
+The above example adds only some of the possible language translations, which is fine
 because English is automatically enabled anyway. Most values must be specified
 as strings, but BDD prefixes and true/false strings allow more than one value
 and must be given as lists. For more examples, see Robot Framework's internal
-languages__ module that contains the `Language` class as well as all built-in
+`languages` module which contains the `Language` class as well as all built-in
 language definitions.
+- https://github.com/robotframework/robotframework/blob/master/src/robot/conf/languages.py
 
-__ `Enabling languages`_
-__ https://github.com/robotframework/robotframework/blob/master/src/robot/conf/languages.py
+### Contributing translations
 
-Contributing translations
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you want to add translation for a new language or enhance existing, head
-to Crowdin__ that we use for collaboration. For more details, see the
-separate Localization__ project, and for questions and free discussion join
-the `#localization` channel on our Slack_.
-
-__ https://robotframework.crowdin.com
-__ https://github.com/MarketSquare/localization
+If you want to add translation for a new language or enhance an existing language, please head
+to `Crowdin` which we use for collaboration. For more details, see the separate `Localization` project and for questions and free discussion join the `#localization` channel on our `Slack` pletform.
+- https://robotframework.crowdin.com
+- https://github.com/MarketSquare/localization
