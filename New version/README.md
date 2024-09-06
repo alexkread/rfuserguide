@@ -7,8 +7,8 @@ Few notes during the conversion from reStructuredText to markdown:
 - Deprecations: Suggest to remove bits like this:
 >&#9888; _Robot Framework also supports singular headers such as  `*** Setting ***,` but that support was deprecated in Robot Framework 6.0. There is a visible deprecation warning starting from Robot Framework 7.0 and singular headers will eventually not be supported at all._
 
-### "Create test data" 
-- renamed without "create" as it's likely create, scope, re-assign and use of test data
+### "Create input data" 
+- renamed without "create" as it's likely create, scope, re-assign and use of input data
 - "Input data" (useable for RPA also)
 
 
