@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.5 on win32)" generated="2024-09-10T22:49:25.054192" rpa="false" schemaversion="5">
+<suite id="s1" name="reST to MD conversion" source="C:\Users\AlexUser\Desktop\reST to MD conversion">
+<suite id="s1-s1" name="Rest Markdown Convertor Test" source="C:\Users\AlexUser\Desktop\reST to MD conversion\rest_markdown_convertor_test.robot">
+<test id="s1-s1-t1" name="Convert heading three digits test" line="7">
+<kw name="Convert Heading" owner="rest_markdown_convertor">
+<msg time="2024-09-10T22:49:25.112521" level="INFO">${result} = ### Test &amp; something 4.1.1 else      here   4.1.1   Maybe?</msg>
+<var>${result}</var>
+<arg>${three_digit_heading_text}</arg>
+<status status="PASS" start="2024-09-10T22:49:25.111523" elapsed="0.000998"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${three_digit_heading_expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-10T22:49:25.112521" elapsed="0.001140"/>
+</kw>
+<status status="PASS" start="2024-09-10T22:49:25.109153" elapsed="0.005363"/>
+</test>
+<test id="s1-s1-t2" name="Convert heading two digits test" line="12">
+<kw name="Convert Heading" owner="rest_markdown_convertor">
+<msg time="2024-09-10T22:49:25.120271" level="INFO">${result} = ## Test &amp; something 4.1 else      here   4.1   Maybe?</msg>
+<var>${result}</var>
+<arg>${two_digit_heading_text}</arg>
+<status status="PASS" start="2024-09-10T22:49:25.117709" elapsed="0.005583"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${two_digit_heading_expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-10T22:49:25.124053" elapsed="0.000377"/>
+</kw>
+<status status="PASS" start="2024-09-10T22:49:25.116118" elapsed="0.008826"/>
+</test>
+<test id="s1-s1-t3" name="Convert heading one digit test" line="17">
+<kw name="Convert Heading" owner="rest_markdown_convertor">
+<msg time="2024-09-10T22:49:25.128389" level="INFO">${result} = # Test &amp; something 4. else      here   4   Maybe?</msg>
+<var>${result}</var>
+<arg>${one_digit_heading_text}</arg>
+<status status="PASS" start="2024-09-10T22:49:25.127488" elapsed="0.000901"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${one_digit_heading_expected}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-10T22:49:25.129391" elapsed="0.000063"/>
+</kw>
+<status status="PASS" start="2024-09-10T22:49:25.125937" elapsed="0.004548"/>
+</test>
+<test id="s1-s1-t4" name="Convert heading no digits test" line="22">
+<kw name="Convert Heading" owner="rest_markdown_convertor">
+<msg time="2024-09-10T22:49:25.133562" level="INFO">${result} =  Test &amp; something else   .   here   . .   Maybe?</msg>
+<var>${result}</var>
+<arg>${no_digit_heading_text}</arg>
+<status status="PASS" start="2024-09-10T22:49:25.133562" elapsed="0.001999"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${no_digit_heading_text}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-10T22:49:25.135561" elapsed="0.001787"/>
+</kw>
+<status status="PASS" start="2024-09-10T22:49:25.131486" elapsed="0.007372"/>
+</test>
+<test id="s1-s1-t5" name="Convert heading empty input string test" line="27">
+<kw name="Convert Heading" owner="rest_markdown_convertor">
+<msg time="2024-09-10T22:49:25.143668" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-09-10T22:49:25.142616" elapsed="0.002053"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-10T22:49:25.144669" elapsed="0.001193"/>
+</kw>
+<status status="PASS" start="2024-09-10T22:49:25.141566" elapsed="0.004296"/>
+</test>
+<status status="PASS" start="2024-09-10T22:49:25.091582" elapsed="0.057301"/>
+</suite>
+<status status="PASS" start="2024-09-10T22:49:25.060847" elapsed="0.091948"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="reST to MD conversion">reST to MD conversion</stat>
+<stat pass="5" fail="0" skip="0" id="s1-s1" name="Rest Markdown Convertor Test">reST to MD conversion.Rest Markdown Convertor Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
