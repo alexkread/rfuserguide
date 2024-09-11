@@ -2,7 +2,7 @@ Few notes during the conversion from reStructuredText to markdown:
 
 ### Throughout
 - Styling of top-level headings, **"TEXT IN UPPERCASE"** to match certifications guide
--  Styling of child-level headings, **"Text with 1 initial capital letter"** to match certifications guide
+- Styling of child-level headings, **"Text with 1 initial capital letter"** to match certifications guide
 
 - Deprecations: Suggest to remove bits like this:
 >&#9888; _Robot Framework also supports singular headers such as  `*** Setting ***,` but that support was deprecated in Robot Framework 6.0. There is a visible deprecation warning starting from Robot Framework 7.0 and singular headers will eventually not be supported at all._
