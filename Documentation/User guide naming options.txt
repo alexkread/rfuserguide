@@ -1,0 +1,12 @@
+[POTENTIAL OPTIONS]:
+--------------------
+Technical guide
+User guide
+User manual
+Documentation
+Beginner's guide
+Instruction manual
+
+[OUTCOME DECISION]: 
+-----------
+None agreed on just yet, still 'user guide' used in workgroup for now

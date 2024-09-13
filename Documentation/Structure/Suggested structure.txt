@@ -66,12 +66,12 @@ Documentation parent page with links
 		Report & log outputs
 		Libraries
 
-4	Test/bot creation 
+4	Test/task creation 
 	(largely the same as #2 now)
 
 5	Programming control structures
 
-6 	Test/bot execution
+6 	Test/task execution
  	(same as #3 now)
 
 7 	Extending Robot Framework
