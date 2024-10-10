@@ -1,0 +1,6 @@
+[DONE] Headings
+Tables
+Notes
+Lists
+Examples
+Replacement terms

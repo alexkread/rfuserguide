@@ -1,0 +1,36 @@
+Some text from the file.
+Some other text from the file.
+
+Note: 
+
+Some note text content here to display
+
+Tip: 
+
+Some tip text content here to display
+
+
+note: 
+
+This note shouldn't be picked up as the note-declaring prefix is lowercase
+
+Note 
+
+This note shouldn't be picked up as the note-declaring prefix hasn't got the colon
+
+
+    Note:     
+
+This note should be picked up as preceeding and trailing whitespace should be removed from the note-declaring prefix
+
+
+Note: 
+
+Some really quite long & possibly, hopefully multi-line note text content here to display.
+Yep, multi-line - here's a second line which should also output as part of the note!
+
+Tip: 
+
+Some really quite long & possibly, hopefully multi-line tip text content here to display.
+Yep, multi-line - here's a second line which should also output as part of the tip!
+
