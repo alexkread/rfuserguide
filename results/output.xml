@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2024-10-11T02:16:57.110815" rpa="false" schemaversion="5">
+<suite id="s1" name="User Guide" source="C:\Users\AlexUser\Desktop\RF\User Guide">
+<suite id="s1-s1" name="RF reST to MD conversion script" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests">
+<suite id="s1-s1-s1-s1" name="Conversion File Parser Tests" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\conversion_file_parser_tests.robot">
+<test id="s1-s1-s1-s1-t1" name="get file contents split by lines test" line="14">
+<kw name="Get Single File Name" owner="conversion_file_pickup">
+<msg time="2024-10-11T02:16:57.163386" level="FAIL">TypeError: expected str, bytes or os.PathLike object, not list</msg>
+<var>${file_name}</var>
+<arg>files_for_testing</arg>
+<arg>small_data_file.txt</arg>
+<status status="FAIL" start="2024-10-11T02:16:57.162387" elapsed="0.003251">TypeError: expected str, bytes or os.PathLike object, not list</status>
+</kw>
+<kw name="Get File Contents Split By Lines" owner="conversion_file_parser">
+<var>${result}</var>
+<arg>${file_name}</arg>
+<status status="NOT RUN" start="2024-10-11T02:16:57.166538" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${file_contents_split_by_lines_expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-10-11T02:16:57.167536" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-11T02:16:57.160394" elapsed="0.008139">TypeError: expected str, bytes or os.PathLike object, not list</status>
+</test>
+<status status="FAIL" start="2024-10-11T02:16:57.149242" elapsed="0.021285"/>
+</suite>
+<status status="FAIL" start="2024-10-11T02:16:57.146574" elapsed="0.030936"/>
+</suite>
+<status status="FAIL" start="2024-10-11T02:16:57.142364" elapsed="0.038137"/>
+</suite>
+<status status="FAIL" start="2024-10-11T02:16:57.116871" elapsed="0.065625"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="User Guide">User Guide</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="RF reST to MD conversion script">User Guide.RF reST to MD conversion script</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Tests">User Guide.RF reST to MD conversion script.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Conversion File Parser Tests">User Guide.RF reST to MD conversion script.Tests.Conversion File Parser Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-11T02:16:57.155408" level="ERROR">Error in file 'C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\conversion_file_parser_tests.robot' on line 5: Variable file 'conversion_file_parser_test_data.py' does not exist.</msg>
+</errors>
+</robot>
