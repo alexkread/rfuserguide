@@ -8,12 +8,11 @@ Variables   token_test_data.py
 *** Test Cases ***
 convert reST note test
    [Documentation]    Applies to original online userguide reST format text
-   Log  \n${three_digit_heading_text}  console=yes
-   Log  ${single_text_rest_note_line_break_after}  console=yes
-   
     Clear File Contents Variable
     ${file_name}=    Get Single File Name    files_for_testing    medium_data_file_with_text_blocks.txt
-    ${result}=    Locate File Content Text Block Instances   ${file_name}    Note:
+    @{file_lines}=   Get File Contents Split By Lines     ${file_name}
+    @{block_instances}=    Locate File Content Text Block Instances    ${file_lines}    Note:
+    convert_rest_note    ${file_lines}    ${block_instances}
     #Should Be Equal    ${result}    ${file_content_note_blocks_expected}
     
 # convert markdown note test

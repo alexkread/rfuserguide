@@ -38,15 +38,12 @@ def locate_file_content_text_block_instances(file_lines:list[str], block_start:s
     search_block_end = False
     
     #TODO: perhaps ast or list comprehensions are the more pythonic preferred way for this
-    for i, line in enumerate(file_lines, 1):
+    for i, line in enumerate(file_lines, 0):
         if _line_matches_sought_start(line, block_start):
             located_blocks.insert(located_block_count,[i])
-            print(located_blocks)
             search_block_end = True
         elif search_block_end and i != int(located_blocks[located_block_count][0])+1 and _line_matches_sought_end(line, block_end):
             located_blocks[located_block_count].append(i)
             search_block_end = False
             located_block_count+=1
-    print(located_blocks)
-    print("**************************************")
     return located_blocks

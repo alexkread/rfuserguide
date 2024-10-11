@@ -11,7 +11,7 @@ def convert_top_level_heading(line_of_text:str):
     for row in list:
         if (re.match(row[0], line_of_text) != None):
             return re.sub(row[0], row[1], line_of_text)
-        
+
     return line_of_text
 
 
