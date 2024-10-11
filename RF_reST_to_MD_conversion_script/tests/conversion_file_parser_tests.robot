@@ -19,5 +19,6 @@ get file contents split by lines test
 locate file content text block instances test
     Clear File Contents Variable
     ${file_name}=    Get Single File Name    files_for_testing    medium_data_file_with_text_blocks.txt
-    ${result}=    Locate File Content Text Block Instances   ${file_name}    Note:
+    @{file_lines}=   Get File Contents Split By Lines     ${file_name}
+    @{result}=    Locate File Content Text Block Instances    ${file_lines}    Note:
     Should Be Equal    ${result}    ${file_content_note_blocks_expected}

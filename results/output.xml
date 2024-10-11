@@ -1,52 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2024-10-11T02:16:57.110815" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2024-10-11T02:19:16.481247" rpa="false" schemaversion="5">
 <suite id="s1" name="User Guide" source="C:\Users\AlexUser\Desktop\RF\User Guide">
 <suite id="s1-s1" name="RF reST to MD conversion script" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script">
 <suite id="s1-s1-s1" name="Tests" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests">
-<suite id="s1-s1-s1-s1" name="Conversion File Parser Tests" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\conversion_file_parser_tests.robot">
-<test id="s1-s1-s1-s1-t1" name="get file contents split by lines test" line="14">
-<kw name="Get Single File Name" owner="conversion_file_pickup">
-<msg time="2024-10-11T02:16:57.163386" level="FAIL">TypeError: expected str, bytes or os.PathLike object, not list</msg>
-<var>${file_name}</var>
-<arg>files_for_testing</arg>
-<arg>small_data_file.txt</arg>
-<status status="FAIL" start="2024-10-11T02:16:57.162387" elapsed="0.003251">TypeError: expected str, bytes or os.PathLike object, not list</status>
-</kw>
-<kw name="Get File Contents Split By Lines" owner="conversion_file_parser">
+<suite id="s1-s1-s1-s1" name="Heading Tests" source="C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\heading_tests.robot">
+<test id="s1-s1-s1-s1-t1" name="convert top level heading three digits test" line="7">
+<kw name="Convert Top Level Heading" owner="convert_heading">
+<msg time="2024-10-11T02:19:16.530246" level="FAIL">Variable '${three_digit_heading_text}' not found.</msg>
 <var>${result}</var>
-<arg>${file_name}</arg>
-<status status="NOT RUN" start="2024-10-11T02:16:57.166538" elapsed="0.000000"/>
+<arg>${three_digit_heading_text}</arg>
+<status status="FAIL" start="2024-10-11T02:19:16.529251" elapsed="0.000995">Variable '${three_digit_heading_text}' not found.</status>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${result}</arg>
-<arg>${file_contents_split_by_lines_expected}</arg>
+<arg>${three_digit_heading_expected}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-10-11T02:16:57.167536" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-10-11T02:19:16.531245" elapsed="0.000996"/>
 </kw>
-<status status="FAIL" start="2024-10-11T02:16:57.160394" elapsed="0.008139">TypeError: expected str, bytes or os.PathLike object, not list</status>
+<status status="FAIL" start="2024-10-11T02:19:16.527255" elapsed="0.004986">Variable '${three_digit_heading_text}' not found.</status>
 </test>
-<status status="FAIL" start="2024-10-11T02:16:57.149242" elapsed="0.021285"/>
+<test id="s1-s1-s1-s1-t2" name="convert top level heading two digits test" line="12">
+<kw name="Convert Top Level Heading" owner="convert_heading">
+<msg time="2024-10-11T02:19:16.537229" level="FAIL">Variable '${two_digit_heading_text}' not found.</msg>
+<var>${result}</var>
+<arg>${two_digit_heading_text}</arg>
+<status status="FAIL" start="2024-10-11T02:19:16.536231" elapsed="0.001995">Variable '${two_digit_heading_text}' not found.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${two_digit_heading_expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-10-11T02:19:16.538226" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-11T02:19:16.535233" elapsed="0.003990">Variable '${two_digit_heading_text}' not found.</status>
+</test>
+<test id="s1-s1-s1-s1-t3" name="convert top level heading one digit test" line="17">
+<kw name="Convert Top Level Heading" owner="convert_heading">
+<msg time="2024-10-11T02:19:16.543212" level="FAIL">Variable '${one_digit_heading_text}' not found.</msg>
+<var>${result}</var>
+<arg>${one_digit_heading_text}</arg>
+<status status="FAIL" start="2024-10-11T02:19:16.542214" elapsed="0.001998">Variable '${one_digit_heading_text}' not found.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${one_digit_heading_expected}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-10-11T02:19:16.544212" elapsed="0.000994"/>
+</kw>
+<status status="FAIL" start="2024-10-11T02:19:16.541218" elapsed="0.003988">Variable '${one_digit_heading_text}' not found.</status>
+</test>
+<test id="s1-s1-s1-s1-t4" name="convert top level heading no digits test" line="22">
+<kw name="Convert Top Level Heading" owner="convert_heading">
+<msg time="2024-10-11T02:19:16.549196" level="FAIL">Variable '${no_digit_heading_text}' not found.</msg>
+<var>${result}</var>
+<arg>${no_digit_heading_text}</arg>
+<status status="FAIL" start="2024-10-11T02:19:16.548201" elapsed="0.001994">Variable '${no_digit_heading_text}' not found.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${no_digit_heading_text}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-10-11T02:19:16.551190" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-10-11T02:19:16.548201" elapsed="0.002989">Variable '${no_digit_heading_text}' not found.</status>
+</test>
+<test id="s1-s1-s1-s1-t5" name="convert top level heading empty input string test" line="27">
+<kw name="Convert Top Level Heading" owner="convert_heading">
+<msg time="2024-10-11T02:19:16.555180" level="INFO">${result} = </msg>
+<var>${result}</var>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2024-10-11T02:19:16.554182" elapsed="0.001997"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-11T02:19:16.556179" elapsed="0.000995"/>
+</kw>
+<status status="PASS" start="2024-10-11T02:19:16.553185" elapsed="0.004987"/>
+</test>
+<status status="FAIL" start="2024-10-11T02:19:16.519276" elapsed="0.040890"/>
 </suite>
-<status status="FAIL" start="2024-10-11T02:16:57.146574" elapsed="0.030936"/>
+<status status="FAIL" start="2024-10-11T02:19:16.514289" elapsed="0.048869"/>
 </suite>
-<status status="FAIL" start="2024-10-11T02:16:57.142364" elapsed="0.038137"/>
+<status status="FAIL" start="2024-10-11T02:19:16.510299" elapsed="0.056848"/>
 </suite>
-<status status="FAIL" start="2024-10-11T02:16:57.116871" elapsed="0.065625"/>
+<status status="FAIL" start="2024-10-11T02:19:16.486395" elapsed="0.082747"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="User Guide">User Guide</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="RF reST to MD conversion script">User Guide.RF reST to MD conversion script</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Tests">User Guide.RF reST to MD conversion script.Tests</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1-s1" name="Conversion File Parser Tests">User Guide.RF reST to MD conversion script.Tests.Conversion File Parser Tests</stat>
+<stat pass="1" fail="4" skip="0" id="s1" name="User Guide">User Guide</stat>
+<stat pass="1" fail="4" skip="0" id="s1-s1" name="RF reST to MD conversion script">User Guide.RF reST to MD conversion script</stat>
+<stat pass="1" fail="4" skip="0" id="s1-s1-s1" name="Tests">User Guide.RF reST to MD conversion script.Tests</stat>
+<stat pass="1" fail="4" skip="0" id="s1-s1-s1-s1" name="Heading Tests">User Guide.RF reST to MD conversion script.Tests.Heading Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-10-11T02:16:57.155408" level="ERROR">Error in file 'C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\conversion_file_parser_tests.robot' on line 5: Variable file 'conversion_file_parser_test_data.py' does not exist.</msg>
+<msg time="2024-10-11T02:19:16.524290" level="ERROR">Error in file 'C:\Users\AlexUser\Desktop\RF\User Guide\RF_reST_to_MD_conversion_script\tests\heading_tests.robot' on line 3: Variable file 'heading_test_data.py' does not exist.</msg>
 </errors>
 </robot>
